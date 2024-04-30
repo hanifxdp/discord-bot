@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Your favorite jendral is on duty to give you impossible tasks to complete and you will bow to me.",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "run": "index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
