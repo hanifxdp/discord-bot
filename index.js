@@ -3,11 +3,13 @@ const dotenv = require("dotenv");
 const { Client, Collection, Events, GatewayIntentBits } = require("discord.js");
 const fs = require("node:fs");
 const path = require("node:path");
+const deployed = require("./deployed.js");
 
 dotenv.config();
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
+client.cooldowns = new Collection();
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, "src/commands");
 const commandFolders = fs.readdirSync(foldersPath);
@@ -47,4 +49,5 @@ for (const file of eventFiles) {
 }
 
 // Log in to Discord with your client's token
+deployed;
 client.login(process.env.DISCORD_TOKEN);
